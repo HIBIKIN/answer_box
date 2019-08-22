@@ -1,0 +1,31 @@
+<!-- app/views/themes/show.html.erb -->
+
+<!-- minimagickで画像生成 -->
+
+<div class="col-md-10 offset-md-1 mt-5">
+  <h2><%= @theme.title %></h2>
+  <hr>
+  <h4>詳細</h4>
+  <%= simple_format @theme.description %>
+  <%= button_tag "削除する", class: "btn btn-warning", data: { toggle: "modal", target: "#delete-theme" } %>
+</div>
+
+<div class="modal fade" id="delete-theme">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= "この逆質問を削除しますか？" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- <div class="modal-body"> -->
+      <!-- <p><%= t(".question_theme", theme: @theme.title) %></p> -->
+      <!-- </div> -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".chancel") %></button>
+        <%= link_to t(".delete_action"), theme_path(@theme), method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
