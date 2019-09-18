@@ -1,9 +1,9 @@
-<!-- app/views/books/_form.html.erb -->
+<!-- app/views/themes/_form.html.erb -->
 
 <%= form_with model: theme, local: true do |form| %>
   <%= render "shared/errors", obj: theme %>
   <div class="form-group">
-    <%= form.label "逆質問のタイトル" %>
+    <%= form.label "質問のタイトル" %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">

@@ -3,15 +3,17 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <%= link_to "BookShelf", root_path, class: "navbar-brand" %>
+  <%= link_to "募集箱", root_path, class: "navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "New theme", new_theme_path, class: "nav-link" %>
-      </li>
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "新しい質問", new_theme_path, class: "nav-link" %>
+        </li>
+      <% end %>
       <li class="nav-item">
         <% if logged_in? %>
           <%= link_to 'ログアウト', logout_path, class: "nav-link" %>
@@ -20,9 +22,11 @@
         <% end %>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <% if logged_in? %>
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item d-flex align-items-center mx-2"><p class="text-white"><%= current_user.nickname %></p></li>
+        <li class="nav-item"><img src="<%= current_user.image_url %>" alt=""></li>
+      </ul>
+    <% end %>
   </div>
 </nav>
