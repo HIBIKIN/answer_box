@@ -1,7 +1,8 @@
 class ThemesController < ApplicationController
+  require 'uri'
 
   def index
-    @themes = Theme.all
+    @themes = Theme.where(user_id: 1)
   end
 
   def new
@@ -29,6 +30,7 @@ class ThemesController < ApplicationController
   def show
     @theme = Theme.find(params[:id])
     @answers = Answer.where(theme_id: params[:id])
+    @text = URI.encode_www_form_component(@theme.title)
   end
 
   def destroy
