@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :set_theme, only: [:index, :new, :create]
+  before_action :set_theme, only: [:index, :new, :create, :show]
 
   def index
     @answers = Answer.find_by(theme_id: params[:theme_id])
@@ -19,6 +19,10 @@ class AnswersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @answer = Answer.find(params[:id])
   end
 
   private

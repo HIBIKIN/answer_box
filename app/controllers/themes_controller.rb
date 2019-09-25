@@ -1,8 +1,11 @@
 class ThemesController < ApplicationController
   require 'uri'
 
+  def home
+  end
+
   def index
-    @themes = Theme.where(user_id: 1)
+    @themes = Theme.where(user_id: current_user)
   end
 
   def new

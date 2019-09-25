@@ -1,6 +1,7 @@
 <% @answers.each do |answer| %>
   <div class="col-md-10 offset-md-1 my-2">
     <%= simple_format answer.body %>
+    <%= link_to answer.body, theme_answer_path(@theme) %>
     <hr>
   </div>
 <% end %>

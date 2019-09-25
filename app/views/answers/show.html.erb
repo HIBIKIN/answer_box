@@ -1,0 +1,9 @@
+<div class="mt-5">
+  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="">
+  <h2><%= @theme.title %></h2>
+<!-- answers -->
+  <hr>
+  <h4>回答</h4>
+  <%= @answer.body %>
+
+</div>
