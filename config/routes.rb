@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :replies
   get 'auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   resources :themes
@@ -7,7 +6,7 @@ Rails.application.routes.draw do
     resources :answers, except: [:edit, :update]
   end
   resources :answers do
-    resources :reply, only: [:create, :show]
+    resources :replies, except: [:edit, :update, :show]
   end
   get 'themes/home', to: 'themes#home'
   root 'themes#home'

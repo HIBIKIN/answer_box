@@ -6,4 +6,9 @@
   <h4>回答</h4>
   <%= @answer.body %>
 
+<!-- reply_link -->
+  <%= link_to "返答する", new_answer_reply_url(@answer) %>
+  <div class="row mt-3">
+    <%= render partial: "replies/reply"%>
+  </div>
 </div>

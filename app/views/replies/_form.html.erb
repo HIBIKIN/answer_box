@@ -1,0 +1,10 @@
+<!-- app/views/replies/_form.html.erb -->
+
+<%= form_with model: [answer, reply], local: true do |form| %>
+  <%= render "shared/errors", obj: reply %>
+  <div class="form-group">
+    <%= form.label "返答" %>
+    <%= form.text_area :body, rows: 5, class: "form-control" %>
+  </div>
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
