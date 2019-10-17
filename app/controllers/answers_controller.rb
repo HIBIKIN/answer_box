@@ -6,7 +6,6 @@ class AnswersController < ApplicationController
   end
 
   def new
-    @answer = Answer.new
   end
 
   def create
@@ -24,7 +23,7 @@ class AnswersController < ApplicationController
   def show
     @answer = Answer.find(params[:id])
     @theme = Theme.find(params[:theme_id])
-    @replys = Reply.where(answer_id: params[:id])
+    @reply = Reply.find_by(answer_id: params[:id])
   end
 
   private

@@ -1,14 +1,10 @@
 <div class="mt-5">
-  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="">
-  <h2><%= @theme.title %></h2>
+  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:FFF,y_-140,w_600,c_fit/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@answer.body)},co_rgb:000,y_20,w_600,c_fit/v1569408531/ogp/ogp_answer_ewkmvp.png" %> alt="">
 <!-- answers -->
   <hr>
-  <h4>回答</h4>
-  <%= @answer.body %>
-
 <!-- reply_link -->
   <%= link_to "返答する", new_answer_reply_url(@answer) %>
-  <div class="row mt-3">
+  <div class="mt-3">
     <%= render partial: "replies/reply"%>
   </div>
 </div>

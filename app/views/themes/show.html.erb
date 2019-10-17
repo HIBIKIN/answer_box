@@ -5,12 +5,12 @@
 
 <div class="mt-5">
   <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{@text},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="">
-  <h2><%= @theme.title %></h2>
   <hr>
   <h4>詳細</h4>
   <%= simple_format @theme.description %>
-  <%= button_tag "削除する", class: "btn btn-warning", data: { toggle: "modal", target: "#delete-theme" } %>
-  <%= link_to "回答する", new_theme_answer_url(@theme), class: "btn btn-primary" %>
+  <div class="row mt-3">
+    <%= render partial: "answers/new"%>
+  </div>
 <!-- answers -->
   <hr>
   <h4>回答</h4>
@@ -18,6 +18,7 @@
     <%= render partial: "answers/answer"%>
   </div>
 
+  <%= button_tag "質問を削除する", class: "btn btn-outline-dark col-md-6 offset-md-3", data: { toggle: "modal", target: "#delete-theme" } %>
 </div>
 
 <div class="modal fade" id="delete-theme">

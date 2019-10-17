@@ -32,6 +32,7 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
+    @answer = Answer.new
     @answers = Answer.where(theme_id: params[:id])
     @text = URI.encode_www_form_component(@theme.title)
   end

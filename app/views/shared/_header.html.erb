@@ -6,10 +6,10 @@
   <%= link_to "募集箱", root_path, class: "navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <%= link_to "過去の質問", themes_path, class: "nav-link" %>
-      </li>
       <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "過去の質問", themes_path, class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to "新しい質問", new_theme_path, class: "nav-link" %>
         </li>
