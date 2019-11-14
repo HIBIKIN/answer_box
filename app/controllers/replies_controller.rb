@@ -14,7 +14,7 @@ class RepliesController < ApplicationController
       answer_id: params[:answer_id]
     }
     if @reply.save
-      @twitter.update("#{@reply.body}\nテストテスト")
+      @twitter.update("#{@reply.body}\nテストテスト\n返答のツイート")
       redirect_to "/themes/#{@answer.theme_id}/answers/#{@answer.id}", notice: "返答を送りました。"
     else
       render :new

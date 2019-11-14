@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :answers, except: [:edit, :update]
   end
   resources :answers do
-    resources :replies, except: [:edit, :update, :show]
+    resources :replies, only: [:new, :create]
   end
   get 'themes/home', to: 'themes#home'
   root 'themes#home'
