@@ -1,8 +1,0 @@
-<!-- 回答してる画像 -->
-  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:FFF,y_-140,w_600,c_fit/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@answer.body)},co_rgb:000,y_20,w_600,c_fit/v1569408531/ogp/ogp_answer_ewkmvp.png" %> alt="">
-
-
-<div class="col-md-10 offset-md-1 mt-3">
-  <h2 class="text-center">返答する</h2>
-  <%= render partial: 'form', locals: { answer: @answer, reply: @reply } %>
-</div>

@@ -23,7 +23,6 @@ class AnswersController < ApplicationController
   def show
     @answer = Answer.find(params[:id])
     @theme = Theme.find(params[:theme_id])
-    @reply = Reply.find_by(answer_id: params[:id])
   end
 
   private
