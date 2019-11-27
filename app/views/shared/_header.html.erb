@@ -18,7 +18,7 @@
         <% if logged_in? %>
           <%= link_to 'ログアウト', logout_path, class: "nav-link" %>
         <% else %>
-          <%= link_to 'Twitterでログイン', 'auth/twitter', class: "nav-link" %>
+          <%= link_to 'Twitterでログイン', '/auth/twitter', class: "nav-link" %>
         <% end %>
       </li>
     </ul>

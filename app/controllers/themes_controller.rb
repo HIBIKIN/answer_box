@@ -7,7 +7,11 @@ class ThemesController < ApplicationController
   end
 
   def index
-    @themes = Theme.where(user_id: current_user)
+    if logged_in?
+      @themes = Theme.where(user_id: current_user)
+    else
+      redirect_to root_path, notice: "ログインしてください"
+    end
   end
 
   def new
@@ -41,9 +45,13 @@ class ThemesController < ApplicationController
   end
 
   def destroy
-    @theme = Theme.find(params[:id])
-    @theme.destroy
-    redirect_to themes_path, notice: "削除しました。"
+    if logged_in?
+      @theme = Theme.find(params[:id])
+      @theme.destroy
+      redirect_to themes_path, notice: "削除しました。"
+    else
+      redirect_to root_path, notice: "ログインしてください"
+    end
   end
 
   private

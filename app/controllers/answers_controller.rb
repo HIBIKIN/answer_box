@@ -2,7 +2,11 @@ class AnswersController < ApplicationController
   before_action :set_theme, only: [:index, :new, :create]
 
   def index
-    @answers = Answer.find_by(theme_id: params[:theme_id])
+    if logged_in?
+      @answers = Answer.find_by(theme_id: params[:theme_id])
+    else
+      redirect_to root_path, notice: "ログインしてください"
+    end
   end
 
   def new
