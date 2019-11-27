@@ -1,8 +1,5 @@
 <% @answers.each do |answer| %>
-  <div class="col-md-10 offset-md-1 my-2">
-  <a href=<%= theme_answer_path(@theme, answer.id) %>>
-    <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:FFF,y_-140,w_600,c_fit/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(answer.body)},co_rgb:000,y_20,w_600,c_fit/v1569408531/ogp/ogp_answer_ewkmvp.png" %> alt="" class="col-6">
+  <a href=<%= theme_answer_path(@theme, answer.id) %> class="col-6 my-1">
+    <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:FFF,y_-140,w_600,c_fit/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(answer.body)},co_rgb:000,y_20,w_600,c_fit/v1569408531/ogp/ogp_answer_ewkmvp.png" %> alt="" class="col-12">
   </a>
-    <hr>
-  </div>
 <% end %>
