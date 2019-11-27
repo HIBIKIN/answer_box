@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   before_action :set_theme, only: [:index, :new, :create]
 
   def index
-    if logged_in?
+    if logged_in? && current_user == @theme.user
       @answers = Answer.find_by(theme_id: params[:theme_id])
     else
       redirect_to root_path, notice: "ログインしてください"
@@ -18,7 +18,7 @@ class AnswersController < ApplicationController
       theme_id: params[:theme_id]
     }
     if @answer.save
-      redirect_to @theme, notice: "回答を送りました。"
+      redirect_to theme_answer_path(id: @answer.id), notice: "回答を送りました。"
     else
       render :new
     end

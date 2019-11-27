@@ -1,6 +1,6 @@
 <div class="mt-5">
-  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:FFF,y_-140,w_600,c_fit/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@answer.body)},co_rgb:000,y_20,w_600,c_fit/v1569408531/ogp/ogp_answer_ewkmvp.png" %> alt="">
-<!-- answers -->
-  <hr>
+  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@theme.title)},co_rgb:FFF,y_-140,w_600,c_fit/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(@answer.body)},co_rgb:000,y_20,w_600,c_fit/v1569408531/ogp/ogp_answer_ewkmvp.png" %> alt="" class="">
+  <%= link_to '元の質問に戻る', theme_path(id: @theme.id), class: "btn btn-primary my-3 ml-1" %>
+
 <!-- reply_link -->
 </div>
