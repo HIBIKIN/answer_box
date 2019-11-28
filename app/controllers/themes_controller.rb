@@ -8,7 +8,7 @@ class ThemesController < ApplicationController
 
   def index
     if logged_in? 
-      @themes = Theme.where(user_id: current_user)
+      @themes = Theme.where(user_id: current_user).order(id: "DESC")
     else
       redirect_to root_path, notice: "ログインしてください"
     end
