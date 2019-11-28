@@ -43,6 +43,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 
+gem 'meta-tags'
+
 gem 'mini_magick'
 
 group :development, :test do
