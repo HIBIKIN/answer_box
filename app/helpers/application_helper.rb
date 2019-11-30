@@ -25,7 +25,7 @@ module ApplicationHelper
         locale: 'ja_JP',
       },
       twitter: {
-        card: 'summary',
+        card: 'Summary with Large Image',
         site: '@hiiiiiibi',
       }
     }
