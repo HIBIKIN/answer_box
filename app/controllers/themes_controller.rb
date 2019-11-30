@@ -31,7 +31,7 @@ class ThemesController < ApplicationController
     # ここでツイートモスルかで条件分岐
     # redirect_to themes_url, notice: "書籍を登録しました。"
     if @theme.save
-      @twitter.update("#{@theme.title}\n#{url}")
+      @twitter.update("#{@theme.title}\n#{url}\n#{@theme.id}")
       redirect_to @theme, notice: "逆質問を作成しました。回答を募集しましょう！"
     else
       render :new
