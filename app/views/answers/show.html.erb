@@ -5,4 +5,15 @@
   <%= link_to '元の質問に戻る', theme_path(id: @theme.id), class: "btn btn-primary my-3 ml-1" %>
 
 <!-- reply_link -->
+<div class="col-md-10 offset-md-1 mt-3">
+  <h2 class="text-center">返答をツイートする</h2>
+  <%= form_with(url: reply_path, method: :post, local: true) do |form| %>
+    <%= render "shared/errors", obj: @answer %>
+    <div class="form-group">
+      <%= form.text_area :reply, rows: 10, class: "form-control" %>
+    </div>
+    <%= form.submit "ツイートする", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 </div>
