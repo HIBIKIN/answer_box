@@ -12,3 +12,147 @@
  *
  */
 @import "bootstrap";
+
+*{
+  // box-sizing: border-box;
+}
+
+#top{
+  text-align: center;
+  width: 100%;
+  padding-bottom: 100px;
+  position: relative;
+
+
+  #title{
+    // position: absolute;
+    width: 708px;
+    height: 162px;
+    // left: 67px;
+    // top: 167px;
+    margin-top: 167px;
+
+    font-size: 60px;
+    line-height: 70px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  #title-sub{
+    // position: absolute;
+    width: 745px;
+    height: 62px;
+    // left: 53px;
+    margin-top: 57px;
+
+    font-size: 19px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .button{
+    position: absolute;
+    
+  }
+}
+
+
+.button{
+  transform: translateX(-50%);
+  // position: absolute;
+  width: 300px;
+  height: 80px;
+  // left: 247px;
+
+  text-align: center;
+  color: #fff;
+  font-size: 27px;
+  line-height: 80px;
+
+  background: #00ACEE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+
+.button:hover{
+    color: #fff;
+    text-decoration-line: none;
+    background-color: #00ACEE;
+    -webkit-box-shadow:inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow:inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow:inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button:active{
+    color: #fff;
+    text-decoration-line: none;
+    background-color: rgb(0, 158, 221);
+    -webkit-box-shadow:inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow:inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow:inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+$image-width: 100vw;
+$image-height: 100vw * 0.64;
+#grey-bg{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  // height: $image-height;
+
+  margin-top: 50px;
+  // transform: translateX(-16%) scaleX(100vw);
+
+  background: #E9E9E9;
+
+  border-top: 25px solid #8BDDF1;
+  border-bottom: 25px solid #8BDDF1;
+
+  img{
+    // display: block;
+    width: 100vw;
+
+  }
+}
+
+// .lb-line2{
+//   position: absolute;
+//   width: 100vw;
+//   height: 0px;
+//   // left: -293px;
+//   top: $image-height;
+
+//   border: 15px solid #8BDDF1;
+// }
+
+#subscribe{
+  /* まずはカンタン5秒で会員登録！ */
+  // position: absolute;
+  width: 100%;
+  // height: 45px;
+  // left: 149px;
+  // top: 1697px;
+
+  // font-family: Roboto;
+  // font-size: 33px;
+  // line-height: 45px;
+  /* identical to box height */
+  color: #000000;
+  text-align: center;
+  padding-top: 50px;
+  position: relative;
+
+  h2{
+    font-size: 33px;
+    line-height: 45px;
+  }
+
+  .button{
+    position: absolute;
+    line-height: 80px;
+    margin: 30px 0;
+  }
+}

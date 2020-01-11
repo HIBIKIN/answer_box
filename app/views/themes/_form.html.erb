@@ -3,7 +3,7 @@
 <%= form_with model: theme, local: true do |form| %>
   <%= render "shared/errors", obj: theme %>
   <div class="form-group">
-    <%= form.label "質問のタイトル(85文字以内)(,/&の文字は使えません。)" %>
+    <%= form.label "質問のタイトル(30文字以内)(,/&の文字は使えません。)" %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">

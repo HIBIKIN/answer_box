@@ -1,6 +1,17 @@
-<h1>募集箱です！！</h1>
-<h3>質問をTwitterで投稿し、匿名で回答を募集できます。</h3>
-<p>
-  質問を作ってTwitterで回答をぞ終始ましょう！
-  回答は匿名で投稿され、質問者のみがみれます。
-</p>  
+<div id="top" class="col-12">
+  <h1 id= "title" class= "mx-auto">質問を投稿して<br>
+  匿名回答を募集しよう！</h1>
+  <p id= "title-sub" class= "mx-auto">Twitterで質問を投稿し、匿名の回答を募集できるサービスです。</p>
+
+  <%= link_to 'Twitterでログイン', '/auth/twitter', class: "button" %>
+</div>
+<%# <hr class= "lb-line1"> %>
+<div id="grey-bg">
+  <%= image_tag 'description.png' %>
+  <%# <hr class="lb-line2"> %>
+</div>
+
+<div id="subscribe" class="col-12">
+  <h2>まずはカンタン5秒で会員登録！</h2>
+  <%= link_to 'Twitterでログイン', '/auth/twitter', class: "button" %>
+</div>
