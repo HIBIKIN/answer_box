@@ -13,48 +13,72 @@
  */
 @import "bootstrap";
 
-*{
-  // box-sizing: border-box;
+@media (min-width: 992px) {
+  .navbar-brand {
+    font-size: 2rem;
+  }
+  .nav-item{
+    font-size: 1.5rem;
+
+    img{
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+// 中デバイス（タブレット, 992px 未満）
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    font-size: 4rem;
+  }
+  .nav-item{
+    font-size: 3rem;
+
+    img{
+      width: 6rem;
+      height: 6rem;
+    }
+  }
 }
 
 #top{
   text-align: center;
   width: 100%;
-  padding-bottom: 100px;
+  padding-bottom: 120px;
   position: relative;
 
 
   #title{
     // position: absolute;
-    width: 708px;
-    height: 162px;
+    width: 100%;
+    // height: 162px;
     // left: 67px;
     // top: 167px;
     margin-top: 167px;
 
     font-size: 60px;
     line-height: 70px;
-    text-align: center;
+    // text-align: center;
 
     color: #000000;
   }
 
   #title-sub{
     // position: absolute;
-    width: 745px;
-    height: 62px;
+    width: 100%;
+    // height: 62px;
     // left: 53px;
-    margin-top: 57px;
+    margin-top: 70px;
 
     font-size: 19px;
-    text-align: center;
+    // text-align: center;
 
     color: #000000;
   }
 
   .button{
     position: absolute;
-    
+    margin-top: 50px;
   }
 }
 
@@ -103,7 +127,7 @@ $image-height: 100vw * 0.64;
 
   // height: $image-height;
 
-  margin-top: 50px;
+  margin-top: 90px;
   // transform: translateX(-16%) scaleX(100vw);
 
   background: #E9E9E9;
@@ -144,6 +168,7 @@ $image-height: 100vw * 0.64;
   text-align: center;
   padding-top: 50px;
   position: relative;
+  padding-bottom: 100px;
 
   h2{
     font-size: 33px;
@@ -155,4 +180,11 @@ $image-height: 100vw * 0.64;
     line-height: 80px;
     margin: 30px 0;
   }
+}
+
+
+.footer{
+  margin-top: 50px;
+  text-align: center;
+  background: #8BDDF1;
 }

@@ -1,9 +1,10 @@
 <!-- app/views/shared/_header.html.erb -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+
+  <%= link_to "募集箱", root_path, class: "navbar-brand display-1" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <%= link_to "募集箱", root_path, class: "navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <% if logged_in? %>
@@ -23,8 +24,8 @@
       </li>
     </ul>
     <% if logged_in? %>
-      <ul class="navbar-nav my-2 my-lg-0">
-        <li class="nav-item d-flex align-items-center mx-2"><p class="text-white"><%= current_user.nickname %></p></li>
+      <ul class="navbar-nav mt-2 mt-lg-0 float-right">
+
         <li class="nav-item"><img src="<%= current_user.image_url %>" alt=""></li>
       </ul>
     <% end %>

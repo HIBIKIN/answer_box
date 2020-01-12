@@ -1,10 +1,10 @@
 <h1 class="col-12">過去にした質問</h1>
 <% @themes.each do |theme| %>
-  <div class="col-6 my-2">
-    <div class="row">
+  <div class="col-sm-12 col-lg-6 my-2">
+    <%# <div class="row"> %>
       <a href="/themes/<%= theme.id %>">
-        <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(theme.title)},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="", class="col-12">
+        <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{URI.encode_www_form_component(theme.title)},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="", style="width: 100%;">
       </a>
-    </div>
+    <%# </div> %>
   </div>
 <% end %> 

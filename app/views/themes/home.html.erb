@@ -1,9 +1,13 @@
 <div id="top" class="col-12">
   <h1 id= "title" class= "mx-auto">質問を投稿して<br>
   匿名回答を募集しよう！</h1>
-  <p id= "title-sub" class= "mx-auto">Twitterで質問を投稿し、匿名の回答を募集できるサービスです。</p>
+  <h3 id= "title-sub" class= "mx-auto">Twitterで質問を投稿し、匿名の回答を募集できるサービスです。</h3>
 
-  <%= link_to 'Twitterでログイン', '/auth/twitter', class: "button" %>
+  <% if logged_in? %>
+    <%= link_to "新しい質問を作る", new_theme_path, class: "button" %>
+  <% else %>
+    <%= link_to 'Twitterでログイン', '/auth/twitter', class: "button" %>
+  <% end %>
 </div>
 <%# <hr class= "lb-line1"> %>
 <div id="grey-bg">
@@ -13,5 +17,9 @@
 
 <div id="subscribe" class="col-12">
   <h2>まずはカンタン5秒で会員登録！</h2>
-  <%= link_to 'Twitterでログイン', '/auth/twitter', class: "button" %>
+  <% if logged_in? %>
+    <%= link_to "新しい質問を作る", new_theme_path, class: "button" %>
+  <% else %>
+    <%= link_to 'Twitterでログイン', '/auth/twitter', class: "button" %>
+  <% end %>
 </div>

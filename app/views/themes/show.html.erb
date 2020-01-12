@@ -1,44 +1,45 @@
-<!-- app/views/themes/show.html.erb -->
+<div class="mx-auto">
+  <!-- app/views/themes/show.html.erb -->
 
-<!-- minimagickで画像生成 -->
-<% set_meta_tags og: { image: image_url("https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{@text},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png") } %>
+  <% set_meta_tags og: { image: image_url("https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{@text},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png") } %>
 
 
-<div class="mt-5">
-  <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{@text},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="">
-  <hr>
-  <h4>詳細</h4>
-  <%= simple_format @theme.description %>
-  <div class="row mt-3">
-    <%= render partial: "answers/new"%>
-  </div>
-<!-- answers -->
-  <% if logged_in? %>
+  <div class="mt-5">
+    <img src=<%= "https://res.cloudinary.com/hibiki/image/upload/l_text:Sawarabi%20Gothic_35:#{@text},co_rgb:000,y_-80,w_600,c_fit/v1568955978/ogp/ogpimage_pvjjw4.png" %> alt="">
     <hr>
-    <h4>回答</h4>
+    <h4>詳細</h4>
+    <%= simple_format @theme.description %>
     <div class="row mt-3">
-      <%= render partial: "answers/answer"%>
+      <%= render partial: "answers/new"%>
     </div>
-
-    <%= button_tag "質問を削除する", class: "btn btn-outline-dark col-md-6 offset-md-3", data: { toggle: "modal", target: "#delete-theme" } %>
-  <% end %>
-</div>
-
-<div class="modal fade" id="delete-theme">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><%= "この質問を削除しますか？" %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <!-- answers -->
+    <% if logged_in? %>
+      <hr>
+      <h4>回答</h4>
+      <div class="row mt-3">
+        <%= render partial: "answers/answer"%>
       </div>
-      <!-- <div class="modal-body"> -->
-      <!-- <p><%= t(".question_theme", theme: @theme.title) %></p> -->
-      <!-- </div> -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".chancel") %></button>
-        <%= link_to t(".delete_action"), theme_path(@theme), method: :delete, class: "btn btn-danger" %>
+
+      <%= button_tag "質問を削除する", class: "btn btn-outline-dark col-md-6 offset-md-3 mt-3", data: { toggle: "modal", target: "#delete-theme" } %>
+    <% end %>
+  </div>
+
+  <div class="modal fade" id="delete-theme">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= "この質問を削除しますか？" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- <div class="modal-body"> -->
+        <!-- <p><%= t(".question_theme", theme: @theme.title) %></p> -->
+        <!-- </div> -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".chancel") %></button>
+          <%= link_to t(".delete_action"), theme_path(@theme), method: :delete, class: "btn btn-danger" %>
+        </div>
       </div>
     </div>
   </div>
