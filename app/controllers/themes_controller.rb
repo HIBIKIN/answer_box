@@ -1,6 +1,6 @@
 class ThemesController < ApplicationController
   require 'uri'
-  before_action :set_twitter_client
+  # before_action :set_twitter_client
 
 
   def home
@@ -32,8 +32,9 @@ class ThemesController < ApplicationController
       # ここでツイートモスルかで条件分岐
       # redirect_to themes_url, notice: "書籍を登録しました。"
       if @theme.save
-        @twitter.update("#{@theme.title}\n#{url}/#{@theme.id}")
-        redirect_to @theme, notice: "逆質問を作成しました。回答を募集しましょう！"
+        # @twitter.update("#{@theme.title}\n#{url}/#{@theme.id}")
+        redirect_to "https://twitter.com/share?url=#{url}/#{@theme.id}&text=#{@theme.title}"
+        # redirect_to @theme, notice: "逆質問を作成しました。回答を募集しましょう！"
       else
         render :new
       end

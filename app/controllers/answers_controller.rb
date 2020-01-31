@@ -2,7 +2,7 @@
 
 class AnswersController < ApplicationController
   before_action :set_theme, only: %i[index new create reply]
-  before_action :set_twitter_client
+  # before_action :set_twitter_client
   require 'uri'
 
   def index
@@ -38,8 +38,8 @@ class AnswersController < ApplicationController
     if logged_in? && current_user == @theme.user
       reply = params[:reply]
       url = request.url
-      if  @twitter.update("#{reply}\n#{url}")
-        redirect_to request.referrer, notice: 'ツイートされました。'
+      if  redirect_to "https://twitter.com/share?url=#{url}&text=#{reply}"
+        # redirect_to request.referrer, notice: 'ツイートされました。'
       else
         redirect_to request.referrer, alert: 'ツイートに失敗しました。'
       end
