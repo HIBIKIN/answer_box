@@ -147,7 +147,8 @@ GEM
     pg (0.21.0)
     popper_js (1.14.5)
     public_suffix (4.0.1)
-    puma (3.12.6)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -275,7 +276,7 @@ DEPENDENCIES
   omniauth
   omniauth-twitter
   pg (~> 0.18)
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (= 5.2.1)
   rails_12factor
   sass-rails (~> 5.0)
